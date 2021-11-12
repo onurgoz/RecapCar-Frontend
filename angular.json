@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "b0c3493e-a9d1-4c2a-acd9-1578fd5587b7"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "RecapCar-Frontedn": {
+    "RecapCar-Frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/RecapCar-Frontedn",
+            "outputPath": "dist/RecapCar-Frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,9 +30,13 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -68,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "RecapCar-Frontedn:build:production"
+              "browserTarget": "RecapCar-Frontend:build:production"
             },
             "development": {
-              "browserTarget": "RecapCar-Frontedn:build:development"
+              "browserTarget": "RecapCar-Frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "RecapCar-Frontedn:build"
+            "browserTarget": "RecapCar-Frontend:build"
           }
         },
         "test": {
@@ -102,5 +109,5 @@
       }
     }
   },
-  "defaultProject": "RecapCar-Frontedn"
+  "defaultProject": "RecapCar-Frontend"
 }
